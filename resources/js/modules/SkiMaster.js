@@ -127,7 +127,7 @@ export default {
             this.calculatedScore = this.calculateScore();
             if ((_.includes([100, 200, 300, 400, 500, 600, 700, 800, 900], this.calculatedScore)) 
                     && (Math.round(this.score[this.skierSpeed] / this.skierSpeed)) != 0) { //prevent a supersonic loop
-                this.skierSpeed++;
+                this.skierSpeed = this.skierSpeed + 2;
                 this.score[this.skierSpeed] = 1;
             }
             requestAnimationFrame(this.gameLoop);
