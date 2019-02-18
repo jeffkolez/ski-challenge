@@ -59,15 +59,17 @@ We are looking forward to see what you come up with!
 
 ___
 
+[Link to game](http://142.93.179.19)
+
 Here's what I came up with for this challenge.
 
 I found the challenge interesting. At first it was a challenging; what do I know about writing an in-browser video game? But once I got into the details of it, I figured things out.
 
-The approach to take was the hardest part. I debated different approaches in my head. In the end, I turned the application into a VueJS project with a Laravel backend. I've been doing a lot of Laravel lately, so it seemed like an obvious approach. I was also congnisant of the phrase "when you have a hammer, everything looks like a nail", but I was also curious if I would be able to pull it off.
+The approach to take was the hardest part. I debated different approaches in my head. In the end, I turned the application into a VueJS project with a Laravel backend. I've been doing a lot of Laravel lately, so it seemed like an obvious approach. I was also cognizant of the phrase "when you have a hammer, everything looks like a nail", but I was also curious if I would be able to pull it off.
 
 With that said, it went relatively smoothly. The game is running in a VueJS framework. Probably the hardest part was making the code work in an OO format, and remembering to bind(this) to anonymous functions.
 
-Since the game was pretty solid, and I'm not a gameplay expert, my goals were to rearchitect the game without major surgery.
+Since the game was pretty solid, and I'm not a gameplay expert, my goals were to re-architect the game without major surgery.
 
 Changelog:
 
@@ -76,14 +78,14 @@ Changelog:
 * Add scoring to the game (counts game loops and then divide by the skier's speed)
 * Score is persisted to an sqlite database on the server. When the skier crashes, the score is sent to the Laravel application via an AJAX call
 * Added a nav bar menu that lets you restart the game as well as get the top scores
-  * You can pull up the higest 10 scores as well as the 10 most recent scores
+  * You can pull up the top 10 scores as well as the 10 most recent scores
   * Added a 'play again' button
-* The skier's speed is increased at certain score thresholds (100, 200, 300, 400, 500, 600, 700, 800, 900)
+* The skier's speed is increased by two steps at certain score thresholds (100, 200, 300, 400, 500, 600, 700, 800, 900)
 * Found the bug mentioned above that crashes the game. The fix was to make sure the skierDirection never goes below 0 or above 5.
 * UI improvement - after you crash you can hit the down arrow to restart the game
-* Found a bug in the calculateOpenPosition method where it kept placing the same object in the same place and we ended up in recusion hell and the game would crash. Not sure if that's related to the changes I made with Vue, or a different version of lowdash generating the same random numbers, but I fixed it by changing the seed
+* Found a bug in the calculateOpenPosition method where it kept placing the same object in the same place and we ended up in recursion hell and the game would crash. Not sure if that's related to the changes I made with Vue, or a different version of lowdash generating the same random numbers, but I fixed it by changing the seed
 
-I ended up spending a bit more time than the 8 hour budget, but I wanted to impress y'all :)
+I ended up spending a bit more time than the eight hour budget, but I wanted to impress y'all :)
 
 ___
 
@@ -91,5 +93,5 @@ What can be improved:
 
 * The scoring algorithm is a bit janky. The score is calculated every time it hits gameLoop() and could be made more efficient
 * Add unit tests - I'm not super familiar with unit testing games since a lot of the methods rely on random events, so that would need some research on my part
-* If the game got more complex, then we should break the game logic into modules. Maybe a skier module, an obsticle module, and a gameplay module. I think it's ok the way it is given how simple the game currently is.
+* If the game got more complex, then we should break the game logic into modules. Maybe a skier module, an obstacle module, and a gameplay module. I think it's ok the way it is given how simple the game currently is.
 * The game could probably use a once-over by QA to make sure we caught all the bugs. There's always bugs.
