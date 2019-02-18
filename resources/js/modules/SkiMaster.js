@@ -142,11 +142,13 @@ export default {
             }
             return total;
         },
-        viewLatest: function() {
+        viewLatest: function(event) {
+            event.preventDefault();
             this.modalTitle = "Latest Scores";
             this.fetchDataShowModal("/score/latest");
         },
-        viewTop: function() {
+        viewTop: function(event) {
+            event.preventDefault();
             this.modalTitle = "Top Scores";
             this.fetchDataShowModal("/score/best");
         },

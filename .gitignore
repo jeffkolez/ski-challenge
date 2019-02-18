@@ -10,3 +10,5 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 database/*.sqlite
+public/js/app.js
+public/css/app.css
