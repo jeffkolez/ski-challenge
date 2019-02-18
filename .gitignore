@@ -12,3 +12,4 @@ yarn-error.log
 database/*.sqlite
 public/js/app.js
 public/css/app.css
+public/mix-manifest.json
