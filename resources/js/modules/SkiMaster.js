@@ -81,7 +81,7 @@ export default {
         initializeGame: function() {
             var canvas = $('<canvas></canvas>')
                 .attr('width', this.gameWidth * window.devicePixelRatio)
-                .attr('height', (this.gameHeight * window.devicePixelRatio) - $("#navbar").outerHeight() - 2)
+                .attr('height', (this.gameHeight * window.devicePixelRatio) - $("#navbar").outerHeight() - 6)
                 .css({
                     width: '100%',
                     height: '100%'
